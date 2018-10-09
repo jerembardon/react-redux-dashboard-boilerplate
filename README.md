@@ -1,1 +1,1 @@
-## React-Redux-Firebase Auth
+## React-Redux-Firebase Auth Boielrplate
