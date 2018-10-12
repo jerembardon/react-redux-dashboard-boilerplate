@@ -8,7 +8,11 @@ import App from "./components/App/App";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const invariant = require("redux-immutable-state-invariant").default();
+
+const createStoreWithMiddleware = applyMiddleware(invariant, thunk)(
+  createStore
+);
 ReactDOM.render(
   <Provider
     store={createStoreWithMiddleware(

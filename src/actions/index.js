@@ -1,4 +1,4 @@
-import { SET_AUTHENTIFICATION } from "./action-types";
+import { SET_AUTHENTIFICATION, ADD_RESSOURCE } from "./action-types";
 
 export function setAuthentification(isLoggedIn) {
   return function(dispatch) {
@@ -6,5 +6,11 @@ export function setAuthentification(isLoggedIn) {
       type: SET_AUTHENTIFICATION,
       payload: isLoggedIn
     });
+  };
+}
+
+export function addRessource() {
+  return {
+    type: ADD_RESSOURCE
   };
 }
