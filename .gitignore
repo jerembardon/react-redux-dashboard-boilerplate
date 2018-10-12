@@ -9,6 +9,9 @@
 # production
 ./frontend/build
 
+# Environnement file
+.env
+
 # misc
 .DS_Store
 .env.local

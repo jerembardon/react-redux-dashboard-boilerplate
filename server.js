@@ -5,9 +5,10 @@ const expressServer = express();
 const router = require("./route");
 const http = require("http");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 mongoose.connect(
-  "mongodb://jeremie.bardon:5cdjxmywzA73@ds235022.mlab.com:35022/react-auth",
+  process.env.DB,
   { useNewUrlParser: true }
 );
 
