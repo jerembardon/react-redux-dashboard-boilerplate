@@ -17,9 +17,9 @@ class Signup extends Component {
 
   renderInputComponent = field => {
     return (
-      <div className="row justify-content-md-center">
-        <fieldset className="col-md-4 form-group">
-          <label className="bmd-label-floating">{field.label}</label>
+      <div>
+        <fieldset>
+          <label>{field.label}</label>
           <input {...field.input} type={field.type} className="form-control" />
           {field.meta.touched &&
             field.meta.error && (
@@ -37,7 +37,7 @@ class Signup extends Component {
     } = this.props;
     return (
       <form onSubmit={handleSubmit(this.handleSubmit)}>
-        <div className="row justify-content-md-center">
+        <div>
           <h1>Inscription</h1>
         </div>
         <Field

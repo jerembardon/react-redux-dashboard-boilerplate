@@ -19,7 +19,7 @@ export function signinUser({ email, password }, history) {
       .then(response => {
         localStorage.setItem("Token", response.data.token);
         dispatch(setAuthentification(true));
-        history.push("/dashboard");
+        history.push("/dashboard/general");
       })
       .catch(error => {
         dispatch(parseError("Impossible de trouver l'utilisateur"));

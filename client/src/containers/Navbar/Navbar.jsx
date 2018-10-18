@@ -1,33 +1,64 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+
+import {
+  NavbarLeftStyle,
+  LogoContainer,
+  LinkContainer,
+  LinkStyled
+} from "../../assets/style/layout/Navbar.style";
+import logo from "./../../assets/images/logo_color.png";
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: true
+    };
+  }
+
+  showMenu() {
+    this.setState({
+      active: !this.state.active
+    });
+  }
+
   render() {
-    if (this.props.isLoggedIn && this.props.location.pathname !== "/") {
-      return (
-        <div style={{ position: "absolute;", background: "transparent" }}>
-          {" "}
-          Nav
-        </div>
-      );
-    } else {
-      return null;
-    }
+    return (
+      <div>
+        <NavbarLeftStyle className={this.state.active ? "active" : "inactive"}>
+          <LogoContainer>
+            <img src={logo} alt="logo entreprise" className="logo" />
+            <p className="d-none d-lg-block"> Stellar Dashboard </p>
+          </LogoContainer>
+
+          <LinkContainer>
+            <ul>
+              <li>
+                <LinkStyled activeClassName="active" to="/dashboard/general">
+                  <i className="material-icons">dashboard</i>
+                  <span className="d-none d-lg-block">Général</span>
+                </LinkStyled>
+              </li>
+              <li>
+                <LinkStyled activeClassName="active" to="/dashboard/patient">
+                  <i className="material-icons">face</i>
+                  <span className="d-none d-lg-block">Patients</span>
+                </LinkStyled>
+              </li>
+            </ul>
+          </LinkContainer>
+        </NavbarLeftStyle>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => {
-  return {
-    isLoggedIn: state.authentification.isLoggedIn
-  };
+  return {};
 };
 
-const mapDispatchToProps = {};
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Navbar)
-);
+export default connect(
+  mapStateToProps,
+  null
+)(Navbar);

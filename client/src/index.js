@@ -9,8 +9,13 @@ import thunk from "redux-thunk";
 import reducers from "./store/reducers";
 import { setAuthentification } from "./store/actions";
 
-const invariant = require("redux-immutable-state-invariant").default();
+// Bootstrap (Use framework you want here, I like bootstrap then I use bootstrap)
+import $ from "jquery";
+import Popper from "popper.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/style/app.css";
 
+const invariant = require("redux-immutable-state-invariant").default();
 const createStoreWithMiddleware = applyMiddleware(invariant, thunk)(
   createStore
 );

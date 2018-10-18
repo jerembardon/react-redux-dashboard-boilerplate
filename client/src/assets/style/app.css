@@ -1,0 +1,17 @@
+body {
+    font-family: "Rubik", sans-serif !important;
+    background-color: #f5f9ff !important;
+    overflow-x: hidden;
+}
+
+.globalContainer {
+    padding-left: 296px;
+}
+
+@media (max-width: 960px) {
+    .globalContainer {
+        padding-left: 96px;
+    }
+}
+
+/* https://mycolor.space/?hex=%231C2432&sub=1*/

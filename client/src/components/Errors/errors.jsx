@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { resetError } from "../../store/actions/index";
+import { resetError } from "../../store/actions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 class Errors extends Component {
@@ -29,7 +29,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  resetError // will be wrapped into a dispatch call
+  resetError
 };
 
 export default withRouter(

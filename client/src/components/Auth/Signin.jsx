@@ -4,6 +4,14 @@ import { Field, reduxForm } from "redux-form";
 import { signinUser } from "../../store/actions";
 import { connect } from "react-redux";
 
+// TStyle
+import logoSimple from "../../assets/images/logo_white.png";
+import {
+  LoginStyleContainer,
+  FormStyleContainer
+} from "../../assets/style/pages/login.style";
+import { FieldSet } from "./../../assets/style/components/Input.style";
+
 const Fields = {
   email: "email",
   password: "password"
@@ -16,39 +24,44 @@ class Signin extends Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit(this.handleSubmit)}>
-        <div className="row justify-content-md-center">
-          <h1>Connexion</h1>
-        </div>
-        <div className="row justify-content-md-center">
-          <fieldset className="col-md-4 form-group">
-            <label className="bmd-label-floating">Email:</label>
-            <Field
-              name={Fields.email}
-              type="text"
-              className="form-control"
-              component="input"
-            />
-          </fieldset>
-        </div>
+      <LoginStyleContainer>
+        <img src={logoSimple} alt="logo" />
+        <h1>Stellar Dashboard</h1>
+        <FormStyleContainer
+          onSubmit={this.props.handleSubmit(this.handleSubmit)}
+        >
+          <div>
+            <FieldSet>
+              <label>Email</label>
+              <Field
+                name={Fields.email}
+                type="text"
+                className="form-control"
+                component="input"
+                placeholder="Indiquez votre adresse e-mail"
+              />
+            </FieldSet>
+          </div>
 
-        <div className="row justify-content-md-center">
-          <fieldset className="col-md-4 form-group">
-            <label className="bmd-label-floating">Mot de passe</label>
-            <Field
-              name={Fields.password}
-              type="password"
-              className="form-control"
-              component="input"
-            />
-          </fieldset>
-        </div>
-        <div className="row justify-content-md-center">
-          <button type="submit" className="btn btn-primary btn-raised">
-            Connexion
-          </button>
-        </div>
-      </form>
+          <div>
+            <FieldSet>
+              <label>Mot de passe</label>
+              <Field
+                name={Fields.password}
+                type="password"
+                className="form-control"
+                component="input"
+                placeholder="Indiquez votre mot de passe"
+              />
+            </FieldSet>
+          </div>
+          <div>
+            <button type="submit" className="btn btn-primary btn-raised">
+              Connexion
+            </button>
+          </div>
+        </FormStyleContainer>
+      </LoginStyleContainer>
     );
   }
 }
