@@ -13,12 +13,14 @@
 
 # production
 ./client/build
+./client/node_modules
+
 
 
 # Environnement file
 ./backend/.env
 ./backend/config.js
-
+./backend/node_modules
 
 # misc
 .DS_Store
