@@ -5,10 +5,11 @@ import { signinUser } from "../../store/actions";
 import { connect } from "react-redux";
 
 // TStyle
-import logoSimple from "../../assets/images/logo_white.png";
+import logoSimple from "../../assets/images/logo_color.png";
 import {
   LoginStyleContainer,
-  FormStyleContainer
+  FormStyleContainer,
+  FormHeader
 } from "../../assets/style/pages/login.style";
 import { FieldSet } from "./../../assets/style/components/Input.style";
 
@@ -26,10 +27,12 @@ class Signin extends Component {
     return (
       <LoginStyleContainer>
         <img src={logoSimple} alt="logo" />
-        <h1>Stellar Dashboard</h1>
         <FormStyleContainer
           onSubmit={this.props.handleSubmit(this.handleSubmit)}
         >
+          <FormHeader>
+            <h1>Connectez-vous !</h1>
+          </FormHeader>
           <div>
             <FieldSet>
               <label>Email</label>

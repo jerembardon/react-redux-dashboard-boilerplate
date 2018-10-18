@@ -9,7 +9,8 @@ function getTokenForUser(user) {
   return jwt.encode(
     {
       sub: user.id,
-      iat: date
+      iat: date,
+      exp: 3
     },
     config.secret
   );
